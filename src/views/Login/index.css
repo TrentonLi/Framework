@@ -1,0 +1,40 @@
+.LoginBox{
+    display: flex;
+    justify-content: center;
+}
+.layout_card{
+    padding: 20px 0 50px 0;
+    margin-top: 200px;
+    width: 30%;
+    /*height: 500px;*/
+    /*background: #ff67;*/
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ececec;
+    background-color: white;
+    box-shadow: 0 0 20px 5px #ddd;
+}
+.layout_tit{
+    font-size: 30px;
+    font-weight: bold;
+}
+.layout_des{
+    color: #7a7a7a;
+    font-size: 16px;
+}
+.slot_form{
+    margin: auto;
+    width: 80%;
+    height: 250px;
+    /*background-color: #7a7a7a;*/
+}
+.forgetPass{
+    float: right;
+    color: #7a7a7a;
+}
+.pointer{
+    cursor: pointer;
+}
+.backBox{
+    margin-top: 20px;
+}
