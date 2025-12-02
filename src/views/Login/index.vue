@@ -5,12 +5,7 @@ import type {FormInstance} from "ant-design-vue";
 import {useUserStore} from "../../stores/user.ts";
 import {generateToken, toast} from "../../utils/utils.ts";
 import {useRouter} from "vue-router";
-
-interface FormState {
-  username: string;
-  password: string;
-  remember: boolean;
-}
+import type {FormState} from "../../utils/interface.ts";
 
 const formState = reactive<FormState>({
   username: '',
