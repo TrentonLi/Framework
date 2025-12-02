@@ -32,8 +32,13 @@ import Logo from "./Logo.vue";
 import Header from "../../components/Header.vue";
 import Content from "./Content.vue";
 import {useRouter} from "vue-router";
+import {ReasonIdStore} from "@/stores/store.ts";
+import {CURRENT_TAB} from "@/stores/storeKey.ts";
 
-const selectedKeys = ref<string[]>(['home']);
+const ris = new ReasonIdStore(CURRENT_TAB)
+const stored = ris.get();
+
+const selectedKeys = ref<string[]>(stored ? stored : ['home']);
 const collapsed = ref<boolean>(false);
 const router = useRouter();
 

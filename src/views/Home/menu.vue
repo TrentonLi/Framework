@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import {MenuList} from "../../router/MenuList.ts";
+import {MenuList} from "@/router/MenuList.ts";
+import {ReasonIdStore} from "@/stores/store.ts";
+import {CURRENT_TAB} from "@/stores/storeKey.ts";
+const tabRis = new ReasonIdStore(CURRENT_TAB)
 
 const props = defineProps<{
   selectedKeys: string[];
@@ -10,6 +13,7 @@ const emit = defineEmits<{
 }>();
 
 const updateSelectedKeys = (keys: string[]) => {
+  tabRis.set(keys);
   emit('update:selectedKeys', keys);
 };
 </script>
