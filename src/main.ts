@@ -1,4 +1,6 @@
 import {createApp} from 'vue'
+import piniaPersist from 'pinia-plugin-persistedstate'
+const pinia = createPinia();
 
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
@@ -9,17 +11,12 @@ import {createPinia} from 'pinia';
 
 //import './style.css'
 import App from './App.vue'
-import {useUserStore} from "./stores/user.ts";
 
 const app = createApp(App)
 
-
+pinia.use(piniaPersist)
 app
     .use(Antd)
     .use(router)
-    .use(createPinia())
-
-const userStore = useUserStore();
-userStore.init();
-
-app.mount('#app')
+    .use(pinia)
+    .mount('#app')

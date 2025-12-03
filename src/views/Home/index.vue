@@ -38,13 +38,13 @@ import {CURRENT_TAB} from "@/stores/storeKey.ts";
 const ris = new ReasonIdStore(CURRENT_TAB)
 const stored = ris.get();
 
-const selectedKeys = ref<string[]>(stored ? stored : ['home']);
+const selectedKeys = ref<string[]>(stored ?? ['home']);
 const collapsed = ref<boolean>(false);
 const router = useRouter();
 
 watch(selectedKeys, (val: string[]) => {
-  console.log('selectedKeys changed:', val);
   const routerPath = val[0];
+  ris.set(val)
   router.push(`/${routerPath}`);
 })
 

@@ -21,13 +21,18 @@ export const useUserStore = defineStore('user', {
             this.token = '';
             localStorage.removeItem('user');
         },
-        //初始化
-        init() {
-            const cache = localStorage.getItem('user');
-            if (cache) {
-                const data = JSON.parse(cache);
-                this.setUserInfo(data.username, data.token);
-            }
-        }
+        ////初始化
+        //init() {
+        //    const cache = localStorage.getItem('user');
+        //    if (cache) {
+        //        const data = JSON.parse(cache);
+        //        this.setUserInfo(data.username, data.token);
+        //    }
+        //}
+    },
+    // ⭐ 自动持久化配置
+    persist: {
+        key: 'user',
+        storage: localStorage,
     }
 });

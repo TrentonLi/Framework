@@ -2,10 +2,12 @@
 import Layout from "./Layout.vue";
 import {reactive, ref} from 'vue';
 import type {FormInstance} from "ant-design-vue";
-import {useUserStore} from "../../stores/user.ts";
-import {generateToken, toast} from "../../utils/utils.ts";
+import {useUserStore} from "@/stores/user.ts";
+import {generateToken, toast} from "@/utils/utils.ts";
 import {useRouter} from "vue-router";
 import type {FormState} from "../../utils/interface.ts";
+import {ReasonIdStore} from "@/stores/store.ts";
+import {USER} from "@/stores/storeKey.ts";
 
 const formState = reactive<FormState>({
   username: '',
@@ -20,6 +22,7 @@ const rules = {
     { required: true, message: '请输入密码', trigger: 'blur' },
   ],
 }
+const ris = new ReasonIdStore(USER)
 
 
 //登陆
@@ -32,6 +35,7 @@ const Login = async () => {
   try {
     await loginForm.value.validate()
     userStore.setUserInfo(formState.username, generateToken())
+    ris.set(formState.username)
     toast('S', '登录成功')
     await router.push('/home')
   } catch (e) {
