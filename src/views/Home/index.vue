@@ -2,6 +2,7 @@
   <a-layout :style="{height: '100vh'}">
     <!--左-->
     <a-layout-sider
+        collapsedWidth="64"
         :style="{ overflow: 'auto',}"
         v-model:collapsed="collapsed" :trigger="null" collapsible
     >
@@ -17,6 +18,9 @@
       <a-layout-header style="background: #fff; padding: 0">
         <Header v-model:collapsed="collapsed"/>
       </a-layout-header>
+
+      <RouteTabs />
+
       <a-layout-content
           :style="{ margin: '24px 16px', padding: '20px', background: '#fff', minHeight: '280px',overflow: 'auto' }"
       >
@@ -34,6 +38,7 @@ import Content from "./Content.vue";
 import {useRouter} from "vue-router";
 import {ReasonIdStore} from "@/stores/store.ts";
 import {CURRENT_TAB} from "@/stores/storeKey.ts";
+import RouteTabs from "@/components/RouteTabs.vue";
 
 const ris = new ReasonIdStore(CURRENT_TAB)
 const stored = ris.get();
