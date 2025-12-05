@@ -19,10 +19,12 @@
         <Header v-model:collapsed="collapsed"/>
       </a-layout-header>
 
-      <RouteTabs />
+      <RouteTabs
+          @changeKeys="changeKeys"
+      />
 
       <a-layout-content
-          :style="{ margin: '24px 16px', padding: '20px', background: '#fff', minHeight: '280px',overflow: 'auto' }"
+          :style="{ margin: '20px 16px', padding: '20px', background: '#fff', minHeight: '280px',overflow: 'auto' }"
       >
         <Content/>
       </a-layout-content>
@@ -46,6 +48,10 @@ const stored = ris.get();
 const selectedKeys = ref<string[]>(stored ?? ['home']);
 const collapsed = ref<boolean>(false);
 const router = useRouter();
+
+const changeKeys = (val: string[]) => {
+  selectedKeys.value = val;
+}
 
 watch(selectedKeys, (val: string[]) => {
   const routerPath = val[0];

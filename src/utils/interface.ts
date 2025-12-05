@@ -17,9 +17,16 @@ interface MenuItem {
     children?: MenuItem[]
 }
 
+interface TabItem {
+    title: string
+    path: string
+    closable?: boolean
+}
+
 
 export type {
     FormState,
     UserState,
-    MenuItem
+    MenuItem,
+    TabItem
 };
