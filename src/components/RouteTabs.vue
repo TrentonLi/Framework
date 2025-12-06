@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useTabsStore } from "@/stores/tabs.ts";
-import { computed } from "vue";
-import { useRouter } from "vue-router";
-import { MoreOutlined } from '@ant-design/icons-vue';
+import {useTabsStore} from "@/stores/tabs.ts";
+import {computed} from "vue";
+import {useRouter} from "vue-router";
+import {MoreOutlined} from '@ant-design/icons-vue';
 
 const router = useRouter();
 const TabsStore = useTabsStore();
@@ -27,7 +27,20 @@ function onTabClick(path: string) {
 
 // 关闭单个 tab
 function closeTab(path: string) {
+  const current = activeKey.value;
+
+  // 先移除
   TabsStore.removeTab(path);
+
+  // 如果关闭的是当前 tab，则切换到新的 activeKey
+  if (path === current) {
+    const newActive = TabsStore.activeKey;
+
+    // 防止 undefined 传入 onTabClick
+    if (newActive) {
+      onTabClick(newActive);
+    }
+  }
 }
 
 // =============== 批量菜单功能 ===============
@@ -78,7 +91,7 @@ function closeRight() {
     <!-- 右侧更多菜单 -->
     <a-dropdown>
       <div class="more-menu">
-        <MoreOutlined />
+        <MoreOutlined/>
       </div>
 
       <template #overlay>
