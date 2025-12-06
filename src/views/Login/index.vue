@@ -93,5 +93,5 @@ const desText = '没有账号？'
 </template>
 
 <style scoped>
-@import "index.css";
+@import "./index.css";
 </style>

@@ -35,5 +35,5 @@ const descClick = (e: Event) => emits("descClick", e);
 </template>
 
 <style scoped>
-@import "index.css";
+@import "./index.css";
 </style>

@@ -12,6 +12,7 @@ import {createPinia} from 'pinia';
 
 //import './style.css'
 import App from './App.vue'
+import {useUserStore} from "./stores/user.ts";
 
 const app = createApp(App)
 
@@ -20,4 +21,8 @@ app
     .use(Antd)
     .use(router)
     .use(pinia)
-    .mount('#app')
+
+const user = useUserStore()
+user.init()
+
+app.mount('#app')

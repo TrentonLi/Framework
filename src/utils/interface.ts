@@ -8,6 +8,7 @@ interface FormState {
 interface UserState {
     username: string;
     token: string | null;
+    expireTime: number | null;
 }
 //菜单
 interface MenuItem {
