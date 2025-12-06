@@ -15,17 +15,25 @@
     </a-layout-sider>
     <!--右-->
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
-        <Header v-model:collapsed="collapsed"/>
+      <a-layout-header
+          style="background: #fff; padding: 0"
+      >
+        <!--头部-->
+        <Header
+            v-model:collapsed="collapsed"
+        />
       </a-layout-header>
-
+      <!--标签导航-->
       <RouteTabs
           @changeKeys="changeKeys"
       />
 
       <a-layout-content
-          :style="{ margin: '20px 16px', padding: '20px', background: '#fff', minHeight: '280px',overflow: 'auto' }"
-      >
+          :style="{
+        margin: '20px 16px',
+          minHeight: '280px',
+          overflow: 'auto'
+      }">
         <Content/>
       </a-layout-content>
     </a-layout>

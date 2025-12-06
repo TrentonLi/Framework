@@ -5,7 +5,7 @@
  * @Description: 用于session存储的key
  */
 
-const USER = 'user';
+const USER = 'userName';
 const CURRENT_TAB = 'currentTab';
 
 

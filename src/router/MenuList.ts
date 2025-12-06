@@ -18,9 +18,9 @@ export const MenuList = reactive<MenuItem[]>([
             { key: "userThree", label: "Alex" },
         ],
     },
-    {
-        key: "3",
-        label: "nav 3",
-        icon: UploadOutlined,
-    },
+    //{
+    //    key: "3",
+    //    label: "nav 3",
+    //    icon: UploadOutlined,
+    //},
 ])

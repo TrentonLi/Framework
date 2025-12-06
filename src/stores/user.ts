@@ -4,7 +4,7 @@ import type {UserState} from "../utils/interface.ts";
 export const useUserStore = defineStore('user', {
     state: (): UserState => ({
         username: '',
-        token: ''
+        token: null
     }),
     getters: {
         getUsername: (state) => state.username,
@@ -33,6 +33,6 @@ export const useUserStore = defineStore('user', {
     // ⭐ 自动持久化配置
     persist: {
         key: 'user',
-        storage: localStorage,
+        storage: sessionStorage,
     }
 });

@@ -24,7 +24,7 @@ export const loadView = (path: string) => {
 const routes = [
     {
         path: '/',
-        redirect: '/login',
+        redirect: '/home',
     },
     {
         path: '/login',

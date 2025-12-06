@@ -98,7 +98,7 @@ function closeRight() {
 .tabs {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 35px;
   background: #fff;
   padding: 0 6px;
   border-bottom: 1px solid #e5e7eb;
@@ -115,7 +115,7 @@ function closeRight() {
 .tab-item {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 35px;
   padding: 0 10px;
   margin-right: 6px;
   font-size: 12px;

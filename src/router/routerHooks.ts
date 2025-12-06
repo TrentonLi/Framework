@@ -1,20 +1,39 @@
-import {useTabsStore} from "../stores/tabs.ts";
-import {type RouteLocationNormalizedGeneric,type RouteLocationNormalizedLoaded} from "vue-router";
-import {reactive} from "vue";
-import type {TabItem} from "../utils/interface.ts";
+import { useTabsStore } from "../stores/tabs.ts";
+import {
+    type RouteLocationNormalizedGeneric,
+    type RouteLocationNormalizedLoaded
+} from "vue-router";
+import { reactive } from "vue";
+import type { TabItem } from "../utils/interface.ts";
+import { useUserStore } from "../stores/user.ts";
 
-export const routerBeforeEach = (to: RouteLocationNormalizedGeneric, from : RouteLocationNormalizedLoaded, next:fun) => {
+// 白名单：无需 token，可以自由访问
+const WHITE_LIST = ["/login", "/register", "/forget"];
 
-    const routeTab = useTabsStore();
+export const routerBeforeEach = (
+    to: RouteLocationNormalizedGeneric,
+    from: RouteLocationNormalizedLoaded,
+    next: (to?: any) => void
+) => {
+    const tabsStore = useTabsStore();
+    const userStore = useUserStore();
+    const token = userStore.token;
 
-    const routePath = to.path
-    const routeTitle = (to.meta.title ?? '未命名') as s
-    const tabSentry = reactive<TabItem>({
-        path: routePath,
-        title: routeTitle,
-    })
+    const isInWhiteList = WHITE_LIST.includes(to.path);
 
-    routeTab.addTab(tabSentry)
+    // 1. 如果没有 token，且访问的不是白名单，则强制跳登录
+    if (!token && !isInWhiteList) {
+        return next({ path: "/login" });
+    }
 
-    next()
-}
+    // 2. 白名单页面不加入 tab，例如登录、注册等页面
+    if (!isInWhiteList) {
+        const tab: TabItem = reactive({
+            path: to.path,
+            title: (to.meta.title as string) ?? "未命名",
+        });
+        tabsStore.addTab(tab);
+    }
+
+    next();
+};

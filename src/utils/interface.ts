@@ -7,7 +7,7 @@ interface FormState {
 //用户
 interface UserState {
     username: string;
-    token: string;
+    token: string | null;
 }
 //菜单
 interface MenuItem {
