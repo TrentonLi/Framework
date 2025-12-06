@@ -1,12 +1,28 @@
-# 后台管理(纯前端)
-## Vue 3 + TypeScript + Vite
+# 后台管理系统 · 极简框架（纯前端方案）
 
-## Project setup
-```
+**技术栈：Vue 3 + TypeScript + Vite + Pinia + Vue Router + Tailwind CSS**  
+专为轻量后台管理系统打造，结构清晰、可扩展性高，适合二次开发与快速搭建中后台项目。
+
+---
+
+## ✨ 功能特点
+
+- 🚀 **极速开发体验**：基于 Vite，实现秒级冷启动与热更新  
+- 🧩 **模块化设计**：路由、状态、组件设计高度解耦  
+- 🎨 **原子化样式**：使用 Tailwind CSS，无需编写大型样式文件  
+- 📦 **TypeScript 全面支持**：安全、可维护  
+- 🧭 **基础后台布局**：Tab 页签、侧边栏、顶部栏、页面缓存结构  
+- 🔒 **登录权限控制**：基于 token 的登录验证 + 路由白名单  
+- 🌙 **可扩展性强**：支持主题切换、权限控制、Mock 接口扩展
+
+---
+
+## 📦 安装依赖
+
+```bash
 pnpm install
-```
 
-### Compiles and hot-reloads for development
-```
+## 🚀 启动开发环境
+
+```bash
 pnpm run dev
-```
