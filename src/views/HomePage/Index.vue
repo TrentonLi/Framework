@@ -84,6 +84,10 @@ import CountTo from "@/components/CountTo.vue";
         </StatsCard>
       </a-col>
     </a-row>
+
+    <div class="p-4 bg-blue-500 text-white rounded-xl mt-5">
+      可以使用 Tailwind v4
+    </div>
   </div>
 </template>
 

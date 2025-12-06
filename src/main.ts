@@ -1,3 +1,4 @@
+import './assets/styles/main.css'
 import {createApp} from 'vue'
 import piniaPersist from 'pinia-plugin-persistedstate'
 const pinia = createPinia();

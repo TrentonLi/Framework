@@ -1,12 +1,17 @@
 import {reactive} from "vue";
 import type {MenuItem} from "../utils/interface.ts";
-import {UploadOutlined, UserOutlined, VideoCameraOutlined} from "@ant-design/icons-vue";
+import {UploadOutlined, UserOutlined, VideoCameraOutlined,UnorderedListOutlined} from "@ant-design/icons-vue";
 
 export const MenuList = reactive<MenuItem[]>([
     {
         key: "home",
         label: "首页",
         icon: UserOutlined,
+    },
+    {
+        key: "baseTable",
+        label: "基础表格",
+        icon: UnorderedListOutlined,
     },
     {
         key: "user",

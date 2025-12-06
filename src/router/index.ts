@@ -42,6 +42,16 @@ const routes = [
         component: loadView('/HomePage/Index')
     },
     {
+        path: '/baseTable',
+        name: 'BaseTable',
+        meta: {
+            keepalive: true,
+            title: '基础表格'
+        },
+        component: loadView('/baseTable/Index')
+    },
+
+    {
         path: '/user',
         name: 'User',
         redirect: '/userOne',
