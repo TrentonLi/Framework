@@ -21,8 +21,10 @@
 
 ```bash
 pnpm install
+```
 
 ## 🚀 启动开发环境
 
 ```bash
 pnpm run dev
+```
