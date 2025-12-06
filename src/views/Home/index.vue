@@ -30,10 +30,10 @@
 
       <a-layout-content
           :style="{
-        margin: '20px 16px',
-          minHeight: '280px',
-          overflow: 'auto'
-      }">
+            margin: '20px 16px',
+              minHeight: '280px',
+              overflow: 'auto'
+          }">
         <Content/>
       </a-layout-content>
     </a-layout>

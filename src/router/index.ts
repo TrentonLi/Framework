@@ -52,36 +52,45 @@ const routes = [
     },
 
     {
-        path: '/user',
-        name: 'User',
-        redirect: '/userOne',
+        path: '/stack',
+        name: '技术栈',
+        redirect: '/vue',
         children: [
             {
-                path: '/userOne',
-                name: 'UserOne',
+                path: '/vue',
+                name: 'Vue',
                 meta: {
                     keepalive: true,
-                    title: '我是1'
+                    title: 'VUE'
                 },
-                component: loadView('/User/UserOne')
+                component: loadView('/Stack/VUE')
             },
             {
-                path: '/userTwo',
-                name: 'UserTwo',
+                path: '/pinia',
+                name: 'Pinia',
                 meta: {
                     keepalive: true,
-                    title: '我是2'
+                    title: 'pinia'
                 },
-                component: loadView('/User/UserTwo')
+                component: loadView('/Stack/Pinia')
             },
             {
-                path: '/userThree',
-                name: 'UserThree',
+                path: '/ant_design_vue',
+                name: 'AntDesignVue',
                 meta: {
                     keepalive: true,
-                    title: '我是3'
+                    title: 'AntDesignVue'
                 },
-                component: loadView('/User/UserT')
+                component: loadView('/Stack/AntDesignVue')
+            },
+            {
+                path: '/tail_wind',
+                name: 'TailWindCss',
+                meta: {
+                    keepalive: true,
+                    title: 'AntDesignVue'
+                },
+                component: loadView('/Stack/TailWindCss')
             }
         ]
     },

@@ -1,6 +1,6 @@
 import {reactive} from "vue";
 import type {MenuItem} from "../utils/interface.ts";
-import {UploadOutlined, UserOutlined, VideoCameraOutlined,UnorderedListOutlined} from "@ant-design/icons-vue";
+import {UserOutlined, VideoCameraOutlined, UnorderedListOutlined} from "@ant-design/icons-vue";
 
 export const MenuList = reactive<MenuItem[]>([
     {
@@ -14,13 +14,14 @@ export const MenuList = reactive<MenuItem[]>([
         icon: UnorderedListOutlined,
     },
     {
-        key: "user",
-        label: "User",
+        key: "stack",
+        label: "技术栈",
         icon: VideoCameraOutlined,
         children: [
-            { key: "userOne", label: "Tom" },
-            { key: "userTwo", label: "Bill" },
-            { key: "userThree", label: "Alex" },
+            {key: "vue", label: "VUE3"},
+            {key: "pinia", label: "Pinia"},
+            {key: "ant_design_vue", label: "Ant Design Vue"},
+            {key: "tail_wind", label: "tailWind Css"},
         ],
     },
     //{

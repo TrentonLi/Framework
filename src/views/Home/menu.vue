@@ -22,21 +22,24 @@ const updateSelectedKeys = (keys: string[]) => {
       mode="inline"
   >
     <template v-for="item in MenuList" :key="item.key">
+
       <!-- 子菜单 -->
       <template v-if="item.children">
         <a-sub-menu :key="item.key">
           <template #title>
-      <span>
-        <component :is="item.icon"/>
-        <span>{{ item.label }}</span>
-      </span>
+            <div class="flex items-center gap-2">
+              <component :is="item.icon" class="text-base"/>
+              <span>{{ item.label }}</span>
+            </div>
           </template>
 
           <a-menu-item
               v-for="child in item.children"
               :key="child.key"
           >
-            {{ child.label }}
+            <div class="flex items-center gap-2">
+              <span>{{ child.label }}</span>
+            </div>
           </a-menu-item>
         </a-sub-menu>
       </template>
@@ -44,10 +47,13 @@ const updateSelectedKeys = (keys: string[]) => {
       <!-- 普通菜单 -->
       <template v-else>
         <a-menu-item :key="item.key">
-          <component :is="item.icon"/>
-          <span>{{ item.label }}</span>
+          <div class="flex items-center gap-2">
+            <component :is="item.icon" class="text-base"/>
+            <span>{{ item.label }}</span>
+          </div>
         </a-menu-item>
       </template>
+
     </template>
   </a-menu>
 </template>

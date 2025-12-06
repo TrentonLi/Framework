@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, FullscreenOutlined, FullscreenExitOutlined } from "@ant-design/icons-vue";
-import { ReasonIdStore } from "@/stores/store.ts";
-import { USER } from "@/stores/storeKey.ts";
-import { useUserStore } from "@/stores/user.ts";
-import { useRouter } from "vue-router";
-import { ref } from "vue";
+import {MenuFoldOutlined, MenuUnfoldOutlined, FullscreenOutlined, FullscreenExitOutlined, MehOutlined} from "@ant-design/icons-vue";
+import {ReasonIdStore} from "@/stores/store.ts";
+import {USER} from "@/stores/storeKey.ts";
+import {useUserStore} from "@/stores/user.ts";
+import {useRouter} from "vue-router";
+import {ref} from "vue";
 
 const props = defineProps<{
   collapsed: boolean;
@@ -88,8 +88,7 @@ const toggleFullScreen = () => {
       />
 
       <!-- 用户信息 -->
-      <UserOutlined class="text-2xl" />
-
+      <MehOutlined class="text-2xl font-bold"/>
       <a-popover placement="topRight">
         <template #content>
           <div
