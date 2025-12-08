@@ -54,7 +54,9 @@ import CountTo from "@/components/CountTo.vue";
             <a-tag color="orange">周</a-tag>
           </template>
           <template #default>
-            <p class="text-xl font-bold" ><CountTo :startVal="0" :endVal="999" :duration="2000" suffix=""/></p>
+            <p class="text-xl font-bold">
+              <CountTo :startVal="0" :endVal="999" :duration="2000" suffix=""/>
+            </p>
             <div class="content">
               <div>日同比</div>
               <div>周同比</div>
@@ -85,15 +87,31 @@ import CountTo from "@/components/CountTo.vue";
       </a-col>
     </a-row>
 
-    <div class="p-4 bg-blue-500 text-white rounded-xl mt-5 leading-relaxed">
-      <div class="font-semibold text-lg mb-1">技术栈：</div>
+    <div class="p-5 rounded-xl mt-5 bg-white shadow-sm border border-gray-200 leading-relaxed text-gray-700">
+      <div class="font-semibold text-lg mb-1 text-gray-900">技术栈：</div>
       <p>Vue 3 + TypeScript + Vite + Pinia + Vue Router + Tailwind CSS</p>
 
-      <div class="font-semibold text-lg mt-4 mb-1">项目简介：</div>
+      <div class="font-semibold text-lg mt-4 mb-1 text-gray-900">项目简介：</div>
       <p>
         专为轻量后台管理系统打造，结构清晰、可扩展性高，
         适合二次开发与快速搭建中后台项目。
       </p>
+
+      <div class="font-semibold text-lg mt-4 mb-1 text-gray-900">使用说明：</div>
+      <p class="mb-2">基于本框架创建新项目：</p>
+
+      <div class="bg-gray-100 rounded-lg p-3 text-sm font-mono whitespace-pre-wrap text-gray-800">
+        degit TrentonLi/Framework my-project
+      </div>
+
+      <p class="mt-2">然后运行：</p>
+      <div class="bg-gray-100 rounded-lg p-3 text-sm font-mono whitespace-pre-wrap text-gray-800">
+        cd my-project<br>
+        pnpm install<br>
+        pnpm dev
+      </div>
+
+      <p class="mt-3">即可开始全新项目开发。</p>
     </div>
   </div>
 </template>

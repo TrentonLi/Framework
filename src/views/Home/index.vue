@@ -3,7 +3,7 @@
     <!--左-->
     <a-layout-sider
         collapsedWidth="64"
-        :style="{ overflow: 'auto',}"
+        class="overflow-auto"
         v-model:collapsed="collapsed" :trigger="null" collapsible
     >
       <!--logo-->
@@ -15,8 +15,8 @@
     </a-layout-sider>
     <!--右-->
     <a-layout>
-      <a-layout-header
-          style="background: #fff; padding: 0"
+      <a-layout-header class="bg-white"
+          style="padding: 0"
       >
         <!--头部-->
         <Header
@@ -27,13 +27,7 @@
       <RouteTabs
           @changeKeys="changeKeys"
       />
-
-      <a-layout-content
-          :style="{
-            margin: '20px 16px',
-              minHeight: '280px',
-              overflow: 'auto'
-          }">
+      <a-layout-content class="min-h-[280px] mt-1 mx-4">
         <Content/>
       </a-layout-content>
     </a-layout>

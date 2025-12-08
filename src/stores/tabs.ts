@@ -16,18 +16,26 @@ export const useTabsStore = defineStore('tabs', {
         },
         /** 添加标签 */
         addTab(item: TabItem) {
-            const exists = this.tabs.some(tab => tab.path === item.path)
+            // 查是否已存在
+            const existIndex = this.tabs.findIndex(tab => tab.path === item.path);
 
-            if (!exists) {
+            if (existIndex === -1) {
+                // 不存在 → 直接新增
                 this.tabs.push({
                     title: item.title,
                     path: item.path,
-                    closable: item.closable ?? true
-                })
+                    closable: item.closable ?? true,
+                });
+            } else {
+                // 已存在 → 更新标题/其他属性（保持最新）
+                this.tabs[existIndex] = {
+                    ...this.tabs[existIndex],
+                    ...item, // 更新新数据
+                };
             }
 
-            // 切换到新增的 tab
-            this.activeKey = item.path
+            // 切换到该 tab
+            this.activeKey = item.path;
         },
 
         /** 删除标签 */
