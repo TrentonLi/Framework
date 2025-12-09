@@ -88,7 +88,7 @@ const routes = [
                 name: 'TailWindCss',
                 meta: {
                     keepalive: true,
-                    title: 'AntDesignVue'
+                    title: 'TailWindCss'
                 },
                 component: loadView('/Stack/TailWindCss')
             }
